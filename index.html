@@ -16,24 +16,10 @@
 </script>
  --> 
 <script type="text/javascript" src="https://resources.digital-cloud-west.medallia.com/wdcwest/615212/onsite/embed.js" async></script>
-<script>if (window.KAMPYLE_ONSITE_SDK) {
-//If Digital code has been loaded 
- onsiteLoaded(); //your custom function
-} else {
-// On the neb_OnsiteLoaded event, call onsiteLoaded function
- window.addEventListener('neb_OnsiteLoaded', onsiteLoaded);
+<script>
+    window.KAMPYLE_ONSITE_SDK.showForm(26065); {
 }
 
-function onsiteLoaded(){
-// load the form and store status (true/false) in neb_status
-var neb_status = KAMPYLE_ONSITE_SDK.loadForm(26065);
-// If form is loaded
-if (neb_status === true){
- // set CSS attribute display to inherit so button can be seen
- document.getElementById("mdFormButton").style.display = "inherit"
- }
-}
-</script>
-<button id="my_id" type="button" onclick="KAMPYLE_ONSITE_SDK.showForm(26065);">Click Here</button>    
+<button id="my_id" type="button">Click Here</button>    
 </body>
 </html>
