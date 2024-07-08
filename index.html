@@ -13,6 +13,11 @@
 <script>
     function functionMedallia(){
         window.card_id = "sinistroRE";
+        var script = document.createElement('script');
+        script.src = "https://resources.digital-cloud-west.medallia.com/wdcwest/615212/onsite/embed.js";
+        script.type = "text/javascript";
+        script.async = true;
+        document.body.appendChild(script);
         window.KAMPYLE_ONSITE_SDK.showForm(26065);
     }
 </script>
