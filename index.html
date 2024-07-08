@@ -11,6 +11,9 @@
     <h1>TESTE DIGITAL</h1>
     <!--<button id="my_id" type="button" onclick = "functionMedallia()">Click Here</button>-->
 <script>
+    function showForm(){
+        KAMPYLE_ONSITE_SDK.showForm(26065);
+    }
     function functionMedallia(){
         window.card_id = "sinistroRE";
         var script = document.createElement('script');
@@ -18,10 +21,8 @@
         script.type = "text/javascript";
         script.async = true;
         document.body.appendChild(script);
+        showForm();
     }
-</script>
-<script>
-        KAMPYLE_ONSITE_SDK.showForm(26065);
 </script>
 </body>
 </html>
