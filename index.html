@@ -13,9 +13,10 @@
 <script>
     function functionMedallia(){
         window.card_id = "sinistroRE";
-        if (card_id = "sinistroRE"){
-            window.src="https://resources.digital-cloud-west.medallia.com/wdcwest/615212/onsite/embed.js";
-    }
+        var script = document.createElement('script');
+        script.src = 'https://resources.digital-cloud-west.medallia.com/wdcwest/615212/onsite/embed.js';
+        script.type = 'text/javascript';
+        script.async = true;
 }
 </script>
 <!--<button id="my_id" type="button" onclick="KAMPYLE_ONSITE_SDK.showForm(26065)">Click Here</button>-->
