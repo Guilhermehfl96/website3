@@ -18,11 +18,14 @@
         script.type = "text/javascript";
         script.async = true;
         document.body.appendChild(script);
-        showForm();
-    }
-    function showForm(){
-        window.KAMPYLE_ONSITE_SDK.showForm(26065);
-    }    
+        window.addEventListener('MDigital_Submit_Feedback', function(mdEvent) {
+        var mdDetail = mdEvent.detail;
+        var mdData = mdEvent.detail.Content;
+        console.log(mdDetail);
+        console.log(mddata);
+    }) ;
+}
 </script>
+<!--<button id="my_id" type="button" onclick="KAMPYLE_ONSITE_SDK.showForm(26065)">Click Here</button>-->
 </body>
 </html>
