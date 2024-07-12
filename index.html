@@ -9,13 +9,23 @@
 </head>
 <body>
 <h1>TESTE DIGITAL</h1>
-<div id="apolicesARenovar">
-    <button type="button">Click Here ren</button>
+<div>
+    <button id="apolicesARenovar" type="button" onclick = "functionMedallia1()">Click Here ren</button>
 </div>   
 <div>
-    <button id="sinistrosAbertos" type="button">Click Here sinistro</button>
+    <button id="sinistrosAbertos" type="button" onclick = "functionMedallia1()">Click Here sinistro</button>
 </div>
-<!-- PORTAL NEGÓCIOS - GERAL SCRIPT-->
+<script>
+    function functionMedallia1(){
+        var script = document.createElement('script');
+        script.src = "https://resources.digital-cloud-west.medallia.com/wdcwest/615212/onsite/embed.js";
+        script.type = "text/javascript";
+        script.async = true;
+        document.body.appendChild(script);
+    }) ;
+}
+</script>    
+<!-- PORTAL NEGÓCIOS - GERAL SCRIPT
 <script type="text/javascript" src="https://resources.digital-cloud-west.medallia.com/wdcwest/615212/onsite/embed.js" async></script>
 <!-- PORTAL INSTITUCIONAL SCRIPT
 <script type="text/javascript" src="https://resources.digital-cloud-west.medallia.com/wdcwest/24545/onsite/embed.js" async></script>-->
