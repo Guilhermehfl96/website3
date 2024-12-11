@@ -4,24 +4,112 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--style src="https://drive.google.com/uc?export=view&id=1OaX1gr6nJoinKLjjDKLKBKlvWJw3UUSn"></style-->
     <title>Medallia Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button, .submenu-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover, .submenu-button:hover {
+            background-color: #45a049;
+        }
+
+        .submenu {
+            margin-top: 10px;
+            display: none; /* Hidden by default */
+            padding-left: 20px;
+        }
+
+        .submenu-item {
+            background-color: #8BC34A;
+            margin: 5px 0;
+        }
+
+        .submenu-item:hover {
+            background-color: #7cb342;
+        }
+        
+        /* Show submenu on hover */
+        .menu:hover .submenu {
+            display: block;
+        }
+    </style>
 </head>
 <body>
+
     <h1>TESTE DIGITAL</h1>
-    <button type="button" onclick = "functionSinistro()">Click Here - ButtonA</button>
-<script>
-    function functionSinistro(){
-        window.card_id = "sinistroRE";
-        var script = document.createElement('script');
-        script.src = "https://resources.digital-cloud-west.medallia.com/wdcwest/615212/onsite/embed.js";
-        script.type = "text/javascript";
-        script.async = true;
-        document.body.appendChild(script);
-}
-</script>
-<div id="satisfaction_emb_form" style="height:450px; width:450px;"></div>
-<!-- PORTAL NEGÓCIOS - GERAL SCRIPT
-<script type="text/javascript" src="https://resources.digital-cloud-west.medallia.com/wdcwest/615212/onsite/embed.js" async></script>-->
+
+    <!-- Main Menu -->
+    <div class="menu">
+        <button type="button" onclick="functionSinistro('Benef')">Click Here - Benef</button>
+        <button type="button" onclick="functionSinistro('BradescoSeg')">Click Here - BradescoSeg</button>
+        
+        <!-- Submenu -->
+        <div class="submenu">
+            <div class="submenu-item" onclick="changeURL('submenu1')">Submenu Item 1</div>
+            <div class="submenu-item" onclick="changeURL('submenu2')">Submenu Item 2</div>
+            <div class="submenu-item" onclick="changeURL('submenu3')">Submenu Item 3</div>
+        </div>
+    </div>
+
+    <div id="satisfaction_emb_form"></div>
+
+    <script>
+        // Flag to ensure the script is added only once
+        var scriptAdded = false;
+
+        function functionSinistro(companyName) {
+            // Prevent adding the script if it's already been added
+            if (!scriptAdded) {
+                var script = document.createElement('script');
+                script.src = "https://resources.digital-cloud-west.medallia.com/wdcwest/615212/onsite/embed.js";
+                script.type = "text/javascript";
+                script.async = true;
+                document.body.appendChild(script);
+                scriptAdded = true;
+            }
+
+            // Optional: You can add custom behavior based on the company name
+            console.log('Function triggered for:', companyName);
+        }
+
+        // Function to change the URL dynamically
+        function changeURL(submenu) {
+            var newURL = window.location.protocol + "//" + window.location.host + "/" + submenu;
+
+            // Update the URL without reloading the page
+            history.pushState(null, null, newURL);
+            console.log("URL updated to:", newURL);
+
+            // Optional: Perform additional actions based on submenu
+            if (submenu === 'submenu1') {
+                // Do something for submenu 1
+                console.log('You selected Submenu 1');
+            } else if (submenu === 'submenu2') {
+                // Do something for submenu 2
+                console.log('You selected Submenu 2');
+            } else if (submenu === 'submenu3') {
+                // Do something for submenu 3
+                console.log('You selected Submenu 3');
+            }
+        }
+    </script>
+
 </body>
 </html>
