@@ -57,8 +57,8 @@
 
     <!-- Main Menu -->
     <div class="menu">
-        <button type="button" onclick="functionSinistro('Benef')">Click Here - Benef</button>
-        <button type="button" onclick="functionSinistro('BradescoSeg')">Click Here - BradescoSeg</button>
+        <button type="button" onclick="functionSinistro1('Benef')">Click Here - Benef</button>
+        <button type="button" onclick="functionSinistro2('BradescoSeg')">Click Here - BradescoSeg</button>
         
         <!-- Submenu -->
         <div class="submenu">
@@ -74,11 +74,11 @@
         // Flag to ensure the script is added only once
         var scriptAdded = false;
 
-        function functionSinistro(companyName) {
+        function functionSinistro1(companyName) {
             // Prevent adding the script if it's already been added
             if (!scriptAdded) {
                 var script = document.createElement('script');
-                script.src = "https://resources.digital-cloud-west.medallia.com/wdcwest/615212/onsite/embed.js";
+                script.src = "https://resources.digital-cloud-west.medallia.com/wdcwest/615688/onsite/embed.js";
                 script.type = "text/javascript";
                 script.async = true;
                 document.body.appendChild(script);
