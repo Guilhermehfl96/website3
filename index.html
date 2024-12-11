@@ -89,6 +89,21 @@
             console.log('Function triggered for:', companyName);
         }
 
+function functionSinistro2(companyName) {
+            // Prevent adding the script if it's already been added
+            if (!scriptAdded) {
+                var script = document.createElement('script');
+                script.src = "https://resources.digital-cloud-west.medallia.com/wdcwest/24545/onsite/embed.js";
+                script.type = "text/javascript";
+                script.async = true;
+                document.body.appendChild(script);
+                scriptAdded = true;
+            }
+
+            // Optional: You can add custom behavior based on the company name
+            console.log('Function triggered for:', companyName);
+        }        
+
         // Function to change the URL dynamically
         function changeURL(submenu) {
             var newURL = window.location.protocol + "//" + window.location.host + "/" + submenu;
